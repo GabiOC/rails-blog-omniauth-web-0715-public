@@ -1,4 +1,8 @@
-<h1>Sign Up</h1>
-
-
+<% if @current_user %>
+"Welcome #{@current_user.name}"
 <%= link_to 'Back', users_path %>
+<% else %>
+  <h1>Sign Up</h1>
+  <%= link_to 'Sign In With Github', "/auth/github" %>
+  <%= link_to 'Back', users_path %>
+<% end %>
